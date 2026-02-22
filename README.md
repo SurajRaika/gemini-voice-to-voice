@@ -1,78 +1,65 @@
-# Gemini Voice-to-Voice Chat
+# Gemini Voice-to-Voice
 
-A Python implementation of real-time voice conversation with Google's Gemini AI model. This project enables natural, bidirectional voice communication with Gemini, supporting multi-turn conversations. This is an improved version of [philschmid's Gemini Voice implementation](https://gist.github.com/philschmid/cb8c98f0781e4e52e5d364ff39e2ccd2) with fixes for turn handling and other improvements.
+## Project Overview
+Gemini Voice-to-Voice is an experimental project that enables AI agents to communicate using mobile phones. The project leverages Microsoft's Phone Link app to redirect input and output sound, creating a seamless voice interaction experience.
 
 ## Features
+- AI-driven voice communication over mobile phones.
+- Integration with Microsoft's Phone Link app.
+- Experimental setup for exploring voice-to-voice AI interactions.
 
-- 🎤 Real-time voice input capture
-- 🔊 Real-time voice response playback
-- 💬 Multi-turn conversation support
-- ⚡ Low-latency audio streaming
-- 🎯 WebSocket-based communication with Gemini API
+## Setup Instructions
 
-## Prerequisites
+### Prerequisites
+- Python 3.8 or higher
+- Microsoft's Phone Link app installed and connected to your mobile phone
 
-- Python 3.11 or higher
-- A Google Gemini API key
-- PortAudio (required for PyAudio)
-
-## Installation
-
+### Installation
 1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/gemini-voice-to-voice.git
-cd gemini-voice-to-voice
-```
-
-2. Install the required packages:
-```bash
-pip install -r requirements.txt
-```
-
-3. Copy the example environment file and add your Gemini API key:
-```bash
-cp .env.example .env
-```
-
-4. Edit `.env` and replace `your_api_key_here` with your actual Gemini API key from https://makersuite.google.com/app/apikey
+   ```bash
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd gemini-voice-to-voice
+   ```
+3. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   ```
+4. Activate the virtual environment:
+   - On Windows:
+     ```bash
+     venv\Scripts\activate
+     ```
+   - On macOS/Linux:
+     ```bash
+     source venv/bin/activate
+     ```
+5. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Usage
+1. Run the main script:
+   ```bash
+   python simpleVoiceAgentLive.py
+   ```
+2. Follow the prompts to interact with the AI agent.
 
-1. Run the script:
-```bash
-python main.py
+## Project Structure
+```
+Gemini Voice-to-Voice/
+├── src/                # Source code
+├── tests/              # Test cases
+├── requirements.txt    # Project dependencies
+├── README.md           # Project documentation
+├── .gitignore          # Git ignore file
 ```
 
-2. Wait for the "Connected to Gemini, You can start talking now" message
-
-3. Start speaking - Gemini will respond with voice in real-time
-
-4. The conversation will continue naturally, with support for:
-   - Multi-turn dialogue
-   - Natural pauses
-
-## How It Works
-
-The application uses three main components running concurrently:
-
-1. **Audio Capture**: Continuously captures audio from your microphone and streams it to Gemini
-2. **Response Processing**: Handles Gemini's responses and manages conversation turns
-3. **Audio Playback**: Plays back Gemini's voice responses in real-time
-
-The WebSocket connection ensures low-latency communication for natural conversation flow.
-
-## Technical Details
-
-- Audio Format: 16-bit PCM
-- Sample Rate: 16kHz (input), 24kHz (output)
-- Chunk Size: 512 samples
-- API: Gemini 2.0 Flash Experimental
-- Protocol: WebSocket streaming
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request.
 
 ## License
-
-MIT License - feel free to use and modify as needed.
-
-## Contributing
-
-Contributions are welcome! Feel free to submit issues and pull requests.
+This project is licensed under the MIT License.
